@@ -91,6 +91,7 @@ public class CalcTest {
         String value = calcPage.getResultValue();
         //Сравниваем полученные данные с ОР
         Assert.assertEquals(expected, value);
+         calcPage.clearField();
      }
     @Test(dataProvider = "NegativeData", description = "PositiveTests")
     public void calcNegativeTest(String region, String input, String expectedClassNameNotification) {
