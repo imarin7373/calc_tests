@@ -94,7 +94,7 @@ public class CalcTest {
          //очищаем форму
         calcPage.clearField();
      }
-    @Test(dataProvider = "NegativeData", description = "PositiveTests")
+    @Test(dataProvider = "NegativeData", description = "NegativeTests")
     public void calcNegativeTest(String region, String input, String expectedClassNameNotification) {
         calcPage.select_list(region);
         //очищаем форму
