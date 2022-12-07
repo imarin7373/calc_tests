@@ -25,9 +25,9 @@ public class CalcPage {
     /**
      * метод выбора локации в dropdown
      */
-    public void select_list(String value){
+    public void select_list(int value){
         Select statusDropdown=new Select(status_dropdown);
-        statusDropdown.selectByVisibleText(value);
+        statusDropdown.selectByIndex(value);
     }
 
     /**

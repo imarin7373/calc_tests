@@ -32,46 +32,46 @@ public class CalcTest {
     //двумерный массив с тестовыми данными. 1. Регион; 2. Вводные данные; 2. ОР.
     public Object[][] dataProviderPositiveRostovRegion() {
         return new Object[][] {
-            { "Ростовская область", "1", "12", },
-            { "Ростовская область", "100", "1200"},
-            { "Ростовская область", "101", "1515" },
-            { "Ростовская область", "150", "2250" },
-            { "Ростовская область", "151", "6795" },
-            { "Ростовская область", "200", "9000" },
-            { "Ростовская область", "201", "15075" },
-            { "Ростовская область", "250", "18750" },
-            { "Ростовская область", "251", "37650" },
-            { "Ростовская область", "2000", "300000" },
-            { "Алтайский край", "1", "10", },
-            { "Алтайский край", "100", "1000"},
-            { "Алтайский край", "101", "2020" },
-            { "Алтайский край", "150", "3000" },
-            { "Алтайский край", "151", "3775" },
-            { "Алтайский край", "200", "5000" },
-            { "Алтайский край", "201", "12060" },
-            { "Алтайский край", "250", "15000" },
-            { "Алтайский край", "251", "30120" },
-            { "Алтайский край", "2000", "240000" }
+            { 61, "1", "12", },
+            { 61, "100", "1200"},
+            { 61, "101", "1515" },
+            { 61, "150", "2250" },
+            { 61, "151", "6795" },
+            { 61, "200", "9000" },
+            { 61, "201", "15075" },
+            { 61, "250", "18750" },
+            { 61, "251", "37650" },
+            { 61, "2000", "300000" },
+            { 1, "1", "10", },
+            { 1, "100", "1000"},
+            { 1, "101", "2020" },
+            { 1, "150", "3000" },
+            { 1, "151", "3775" },
+            { 1, "200", "5000" },
+            { 1, "201", "12060" },
+            { 1, "250", "15000" },
+            { 1, "251", "30120" },
+            { 1, "2000", "240000" }
         };
     }
 
     @DataProvider(name="NegativeData")
     public Object[][] dataProviderNegative() {
         return new Object[][] {
-            { "Москва", "-1", "red-notification", },
-            { "Москва", "", "red-notification", },
-                { "Москва", "0", "red-notification", },
-                { "Москва", "null", "red-notification", },
-                { "Москва", "1 0 0", "red-notification", },
-                { "Москва", "100,5", "red-notification", },
-                { "Москва", "120.80", "red-notification", },
-                { "Москва", "2001", "red-notification", },
-                { "Москва", "43545984968", "red-notification", },
-                { "Москва", "10e2", "red-notification", },
-                { "Москва", "`", "red-notification", },
-                { "Москва", "'", "red-notification", },
-                { "Москва", "#", "red-notification", },
-                { "Москва", "test", "red-notification", },
+            { 30, "-1", "red-notification", },
+            { 30, "", "red-notification", },
+            { 30, "0", "red-notification", },
+            { 30, "null", "red-notification", },
+            { 30, "1 0 0", "red-notification", },
+            { 30, "100,5", "red-notification", },
+            { 30, "120.80", "red-notification", },
+            { 30, "2001", "red-notification", },
+            { 30, "43545984968", "red-notification", },
+            { 30, "10e2", "red-notification", },
+            { 30, "`", "red-notification", },
+            { 30, "'", "red-notification", },
+            { 30, "#", "red-notification", },
+            { 30, "test", "red-notification", },
         };
     }
 
@@ -79,7 +79,7 @@ public class CalcTest {
      * тестовый метод
      */
      @Test(dataProvider = "PositiveData", description = "PositiveTests")
-     public void calcPositiveTest(String region, String input, String expected) {
+     public void calcPositiveTest(int region, String input, String expected) {
         calcPage.select_list(region);
         //очищаем форму
         calcPage.clearField();
@@ -94,8 +94,8 @@ public class CalcTest {
          //очищаем форму
         calcPage.clearField();
      }
-    @Test(dataProvider = "NegativeData", description = "NegativeTests")
-    public void calcNegativeTest(String region, String input, String expectedClassNameNotification) {
+    @Test(dataProvider = "NegativeData", description = "PositiveTests")
+    public void calcNegativeTest(int region, String input, String expectedClassNameNotification) {
         calcPage.select_list(region);
         //очищаем форму
         calcPage.clearField();
